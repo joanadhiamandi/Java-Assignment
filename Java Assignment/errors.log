@@ -1,0 +1,13 @@
+Fri May 17 18:25:59 EEST 2024,DbConnector, Unknown database 'quiz_game_java'
+Sat May 18 19:48:03 EEST 2024,UserProfile, Table 'jassignment_quiz_game.history' doesn't exist
+Sat May 18 19:48:41 EEST 2024,UserProfile, Table 'jassignment_quiz_game.history' doesn't exist
+Sat May 18 19:48:59 EEST 2024,UserProfile, Table 'jassignment_quiz_game.history' doesn't exist
+Sat May 18 20:06:16 EEST 2024,UserProfile, Column 'score' not found.
+Sun May 19 23:45:54 EEST 2024,UserProfile, Unknown column 'score' in 'field list'
+Tue May 21 05:57:04 EEST 2024,DbConnector, Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tue May 21 06:01:26 EEST 2024,UserProfile, Unknown column 'score' in 'field list'
+Tue May 21 06:02:13 EEST 2024,UserProfile, Unknown column 'score' in 'field list'
+Tue May 21 06:38:37 EEST 2024,UserProfile, Unknown column 'score' in 'field list'
+Tue May 21 06:42:41 EEST 2024,UserProfile, Unknown column 'score' in 'field list'
