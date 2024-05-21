@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -190,6 +191,7 @@ public class ConsoleQuizUI {
                             playerMenuChoice = displayPlayerMenu();
                             switch (playerMenuChoice) {
                                 case 1:
+                                    DisplayCategory();
                                     String palyAgainChoice;
                                     do {
                                         game.startGame();
@@ -251,6 +253,22 @@ public class ConsoleQuizUI {
         System.out.println("\nHOPE YOU HAD FUN");
         System.out.println("\nSEE YOU NEXT TIME!!!!!!!");
     }
-
+    /**
+     * Displays the available categories and asks the player
+     * to choose, it then calls the selectCategory method from
+     * player class providing with the list of categories and
+     * the player's choice
+     */
+    public void DisplayCategory() {
+        System.out.println();
+        List<QuestionCategories> categories = player.getCategories();
+        for (QuestionCategories aCategory : categories) {
+            System.out.println(aCategory.getCategoryId() + ") " + aCategory.getCategoryName());
+        }
+        System.out.print("\nSelect: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        game.selectCategory(categories, choice);
+    }
 
 }

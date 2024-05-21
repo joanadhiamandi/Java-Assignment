@@ -91,4 +91,12 @@ public class Quiz {
     public boolean isAnswerCorrect(String answer) {
         return this.correctAnswer.equals(answer);
     }
+
+
+    /**
+     * @return the category
+     */
+    public String getCategory() {
+        return category;
+    }
 }

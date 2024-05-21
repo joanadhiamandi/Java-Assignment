@@ -18,6 +18,8 @@ public class Game {
     // The current quiz to be asked (index in the questions list)
     private int currentQuestionIndex;
 
+    private String selectedCategory;
+
     /**
      * Sets the current player for this game session.
      *
@@ -34,7 +36,7 @@ public class Game {
      */
     public void startGame() {
         QuizReader api = new QuizReader();
-        questions = api.quizApiReader();
+        questions = api.quizApiReader(selectedCategory);
         gameScore = 0;
         currentQuestionIndex = 0;
     }
@@ -116,6 +118,16 @@ public class Game {
      */
     public int updateScore() {
         return player.getTotalScore() + gameScore;
+    }
+
+    /**
+     * Sets the selected category's API URL based on the player's choice (index starts at 0).
+     *
+     * @param categories The List of available quiz categories.
+     * @param choice The player's selected category index.
+     */
+    public void selectCategory(List<QuestionCategories> categories, int choice) {
+        selectedCategory = categories.get(choice - 1).getApi_url();
     }
 }
 

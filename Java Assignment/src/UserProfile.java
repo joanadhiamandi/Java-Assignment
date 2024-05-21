@@ -205,4 +205,30 @@ public class UserProfile {
     public int getTotalScore() {
         return score;
     }
+
+    /**
+     * Gets the available categories of quizzes and puts them in a list
+     * @return The list of categories
+     */
+    public List<QuestionCategories> getCategories() {
+        List<QuestionCategories> categories = new ArrayList<>();
+        String query = "SELECT * FROM categories";
+        try {
+            PreparedStatement st = connection.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()) {
+                int category_id = rs.getInt("category_id");
+                String category = rs.getString("category");
+                String api_url = rs.getString("api_url");
+
+                QuestionCategories aCategory = new QuestionCategories(category_id, category, api_url);
+                categories.add(aCategory);
+            }
+        } catch (SQLException e) {
+            logger.logError(new Date() + "," + getClass().getSimpleName() + ", " + e.getMessage());
+            System.out.println("\nError: loading categories");
+        }
+        return categories;
+    }
+
 }

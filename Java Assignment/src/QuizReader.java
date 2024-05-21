@@ -58,10 +58,10 @@ public class QuizReader {
      * @return A List containing the newly constructed Quiz objects.
     */
 
-    public List<Quiz> quizApiReader() {
+    public List<Quiz> quizApiReader(String category) {
         List<Quiz> quizArrayList = new ArrayList<>();
         try {
-            URL url = new URL("https://opentdb.com/api.php?amount=10");
+            URL url = new URL("https://opentdb.com/api.php?amount=10" + category);
             InputStreamReader isr = new InputStreamReader(url.openStream());
             JSONParser parser = new JSONParser();
             JSONObject object = (JSONObject) parser.parse(isr);
